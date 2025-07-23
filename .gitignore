@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# Distribution / build
+/dist/
+/build/
+/*.egg-info/
+/*.egg
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+.flaskenv
+
+# Database files
+*.db
+
+# Logs
+*.log

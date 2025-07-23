@@ -1,0 +1,95 @@
+agents:
+  - name: planner-agent
+    role: "Analyze user requirements and break them into actionable development tasks. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/backend-guidelines.md
+      - .clinerules/development-workflow.md
+    expected_output: |
+      1. Clear task list with priorities
+      2. Technical considerations
+      3. Estimated complexity
+    triggers: ["plan", "break down", "task list"]
+
+  - name: code-generator-agent
+    role: "Generate clean, functional code based on specifications. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/style-guide.md
+      - .clinerules/refactor-dry-principles.md
+    expected_output: "Production-ready code with proper style conventions, necessary comments, and type safety"
+    triggers: ["implement", "write code", "create function"]
+
+  - name: tester-agent
+    role: "Write comprehensive tests including unit tests, integration tests and edge cases. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/test-generation.md
+    expected_output: "Test suite with 80%+ coverage including all edge cases"
+    triggers: ["write test", "test coverage", "unit test"]
+
+  - name: code-reviewer-agent
+    role: "Review code for style violations, security risks, performance issues and bug potential. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/style-guide.md
+      - .clinerules/refactor-dry-principles.md
+      - .clinerules/security-guidelines.md
+      - .clinerules/performance-guidelines.md
+    expected_output: "Code review report with improvement suggestions"
+    triggers: ["review", "code quality", "check code"]
+
+  - name: debugger-agent
+    role: "Analyze runtime issues by examining stack traces, reproducing errors and proposing fixes. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/debug-logging.md
+    expected_output: "Root cause analysis and proposed solution"
+    triggers: ["debug", "fix error", "stack trace"]
+
+  - name: documentation-agent
+    role: "Generate clear documentation including API docs, usage examples and architecture diagrams. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/documentation-guidelines.md
+    expected_output: "Updated documentation with all required sections"
+    triggers: ["document", "api docs", "readme"]
+
+  - name: refactoring-agent
+    role: "Improve code structure by reducing complexity, improving readability and applying design patterns. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/refactor-dry-principles.md
+      - .clinerules/style-guide.md
+    expected_output: "Refactored code with quality improvements"
+    triggers: ["refactor", "clean code", "improve structure"]
+
+  - name: performance-optimizer-agent
+    role: "Identify and fix algorithm bottlenecks, memory leaks and I/O inefficiencies. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/performance-guidelines.md
+      - .clinerules/style-guide.md
+      - .clinerules/refactor-dry-principles.md
+    expected_output: "Performance optimization suggestions"
+    triggers: ["optimize", "performance", "bottleneck"]
+
+  - name: security-auditor-agent
+    role: "Check for injection risks, auth flaws and data exposure. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/security-guidelines.md
+    expected_output: "Security audit report"
+    triggers: ["security", "vulnerability", "audit"]
+
+  - name: deployment-agent
+    role: "Create Docker configurations, CI/CD pipelines and infrastructure scripts. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/deployment-guidelines.md
+    expected_output: "Complete deployment package"
+    triggers: ["deploy", "docker", "ci/cd"]
+
+  - name: explainer-agent
+    role: "Explain technical concepts using plain language, visual aids and step-by-step breakdowns. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/explanation-guidelines.md
+    expected_output: "Clear explanation of complex concepts"
+    triggers: ["explain", "clarify", "how does"]
+
+  - name: version-control-agent
+    role: "Handle meaningful commits, branch strategies and merge conflicts. Please follow the guidelines mentioned in the rules field."
+    rules:
+      - .clinerules/version-control.md
+    expected_output: "Completed version control operations"
+    triggers: ["commit", "branch", "merge"]

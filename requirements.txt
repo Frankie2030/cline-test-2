@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+python-jose[cryptography]
+bcrypt
+python-dotenv
+streamlit
+google-generativeai
+python-multipart
+pytest==7.4.0
+pytest-mock==3.11.1
+httpx==0.24.1
+email-validator>=2.0.0
